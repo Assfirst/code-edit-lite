@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Edit Lite</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 text-white">
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center p-4 bg-gray-800">
+    <div class="flex items-center">
+      <img src="logo.png" alt="Code Edit Lite Logo" class="h-10 mr-2">
+      <span class="text-xl font-bold">Code Edit Lite</span>
+    </div>
+    <div>
+      <button id="loginBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded mr-2">Login</button>
+      <button id="registerBtn" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">Register</button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="flex flex-col items-center justify-center h-screen bg-cover bg-center animate-background">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white text-shadow text-center">
+      Welcome to Code Edit Lite
+    </h1>
+    <p class="text-lg sm:text-xl md:text-2xl mb-8 text-white text-shadow text-center">
+      Your online coding playground.
+    </p>
+    <button id="getStartedBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded">
+      Get Started
+    </button>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center p-4 bg-gray-800 fixed bottom-0 w-full">
+    <p>&copy; 2025 Code Edit Lite. All rights reserved.</p>
+  </footer>
+
+  <!-- Login Popup -->
+  <div id="loginPopup" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+    <div class="bg-transparent p-6 rounded-lg shadow-lg animate-slideIn w-full sm:w-96">
+      <h2 class="text-2xl font-bold mb-4">Login</h2>
+      <form id="loginForm">
+        <div class="mb-4">
+          <label for="loginEmail" class="block text-sm font-medium mb-2">Email</label>
+          <input type="email" id="loginEmail" class="w-full px-3 py-2 bg-gray-700 rounded" required>
+        </div>
+        <div class="mb-4">
+          <label for="loginPassword" class="block text-sm font-medium mb-2">Password</label>
+          <input type="password" id="loginPassword" class="w-full px-3 py-2 bg-gray-700 rounded" required>
+        </div>
+        <p id="loginError" class="text-red-500 text-sm mb-4 hidden">Invalid email or password!</p>
+        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Login</button>
+      </form>
+      <button id="closeLoginPopupBtn" class="mt-4 w-full bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">Close</button>
+    </div>
+  </div>
+
+  <!-- Register Popup -->
+  <div id="registerPopup" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+    <div class="bg-transparent p-6 rounded-lg shadow-lg animate-slideIn w-full sm:w-96">
+      <h2 class="text-2xl font-bold mb-4">Register</h2>
+      <form id="registerForm">
+        <div class="mb-4">
+          <label for="registerEmail" class="block text-sm font-medium mb-2">Email</label>
+          <input type="email" id="registerEmail" class="w-full px-3 py-2 bg-gray-700 rounded" required>
+        </div>
+        <div class="mb-4">
+          <label for="registerPassword" class="block text-sm font-medium mb-2">Password</label>
+          <input type="password" id="registerPassword" class="w-full px-3 py-2 bg-gray-700 rounded" required>
+        </div>
+        <div class="mb-6">
+          <label for="confirmPassword" class="block text-sm font-medium mb-2">Confirm Password</label>
+          <input type="password" id="confirmPassword" class="w-full px-3 py-2 bg-gray-700 rounded" required>
+        </div>
+        <p id="registerError" class="text-red-500 text-sm mb-4 hidden">Passwords do not match!</p>
+        <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">Register</button>
+      </form>
+      <button id="closeRegisterPopupBtn" class="mt-4 w-full bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
